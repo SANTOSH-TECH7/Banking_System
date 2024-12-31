@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .user-info {
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #333;
+            color: #e0e0e0;
+        }
+        button {
+            background-color: #00ffcc;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #000;
+        }
+        button:hover {
+            background-color: #00cc99;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ user.name }}</h1>
+    <div class="user-info">
+        <h2>Your Information:</h2>
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Age: {{ user.age }}</p>
+        <p>Address: {{ user.address }}</p>
+        <p>Account Type: {{ user.account }}</p>
+        <p>Branch: {{ user.branch }}</p>
+        <p>Blockchain ID: {{ user.blockchain_id }}</p>
+    </div>
+    <h2>Make a Transaction:</h2>
+    <form method="POST">
+        <input type="text" name="receiver_id" placeholder="Receiver Blockchain ID" required>
+        <input type="number" name="amount" placeholder="Amount" required>
+        <button type="submit">Send Money</button>
+    </form>
+</body>
+</html>

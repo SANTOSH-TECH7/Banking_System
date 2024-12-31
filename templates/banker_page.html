@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banker Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        .banker-info {
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .transaction-info {
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #555;
+        }
+        th {
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ banker.name }}</h1>
+    <div class="banker-info">
+        <h2>Your Information:</h2>
+        <p>Name: {{ banker.name }}</p>
+        <p>Email: {{ banker.email }}</p>
+        <p>Age: {{ banker.age }}</p>
+        <p>Address: {{ banker.address }}</p>
+        <p>Account Type: {{ banker.account }}</p>
+        <p>Branch: {{ banker.branch }}</p>
+        <p>Resignation Date: {{ banker.resignation }}</p>
+    </div>
+    <div class="transaction-info">
+        <h2>All Transactions:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Sender ID</th>
+                    <th>Receiver ID</th>
+                    <th>Amount</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.sender_id }}</td>
+                    <td>{{ transaction.receiver_id }}</td>
+                    <td>{{ transaction.amount }}</td>
+                    <td>{{ transaction.timestamp }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="transaction-info">
+        <h2>User Transaction Counts:</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>Name</th>
+                    <th>Transaction Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.blockchain_id }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.transactions_count }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

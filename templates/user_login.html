@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+            color: #e0e0e0;
+            padding: 20px;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(30, 30, 30, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #333;
+            color: #e0e0e0;
+        }
+        button {
+            background-color: #00ffcc;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #000;
+        }
+        button:hover {
+            background-color: #00cc99;
+        }
+    </style>
+</head>
+<body>
+    <h1>User Login / Registration</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="number" name="age" placeholder="Age" required>
+        <input type="text" name="address" placeholder="Address" required>
+        <input type="text" name="account" placeholder="Account Type" required>
+        <input type="text" name="branch" placeholder="Branch" required>
+        <label for="blockchain_option">Use existing blockchain ID?</label>
+        <select name="blockchain_option" id="blockchain_option" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <input type="text" name="blockchain_id" placeholder="Blockchain ID" required>
+        <button type="submit">Login / Register</button>
+    </form>
+</body>
+</html>

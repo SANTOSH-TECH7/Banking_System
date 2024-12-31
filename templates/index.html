@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a, #1e1e1e);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 3em;
+            color: #00ffcc;
+            text-shadow: 2px 2px 10px rgba(0, 255, 204, 0.7);
+            margin-top: 50px;
+        }
+        h3 {
+            font-size: 1.8em;
+            color: #ff00ff;
+            text-shadow: 2px 2px 8px rgba(255, 0, 255, 0.7);
+            margin: 20px 0;
+        }
+        .button-container {
+            margin: 30px auto;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+        .button-container a {
+            text-decoration: none;
+            font-size: 1.5em;
+            color: #000;
+            background-color: #00ffcc;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 255, 204, 0.6);
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .button-container a:hover {
+            background-color: #0fff6d;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 255, 204, 0.9);
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 1.2em;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Secure Banking</h1>
+    <h3>Choose an option to proceed:</h3>
+    <div class="button-container">
+        <a href="/user-login">User Login</a>
+        <a href="/banker-login">Banker Login</a>
+    </div>
+    <div class="footer">
+        <p>&copy; 2024 Secure Banking Solutions</p>
+    </div>
+</body>
+</html>
